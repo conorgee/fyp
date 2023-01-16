@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('/w3images/parallax1.jpg');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("/w3images/parallax2.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/w3images/parallax3.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+  .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+}
+</style>
+</head>
+<body>
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">highlighted text</h3>
+  <p>Michael Richard Pence (born June 7, 1959) is an American politician, broadcaster, and lawyer who served as the 48th vice president of the United States from 2017 to 2021 under President Donald Trump. A member of the Republican Party, he previously served as the 50th governor of Indiana from 2013 to 2017. Pence was also a member of the U.S. House of Representatives from 2001 to 2013.
+
+Pence was born and raised in Columbus, Indiana, and is the younger brother of U.S. Representative Greg Pence. He graduated from Hanover College and earned a law degree from the Indiana University Robert H. McKinney School of Law before entering private practice. After losing two bids for a congressional seat in 1988 and 1990, he became a conservative radio and television talk show host from 1994 to 1999. He was elected to the U.S. House of Representatives in 2000 and represented the 2nd district of Indiana from 2001 to 2003 and the 6th district of Indiana from 2003 to 2013. He chaired the Republican Study Committee from 2005 to 2007 and served as the chairman of the House Republican Conference from 2009 to 2011, the third-highest position in the House Republican leadership.[1] Pence described himself as a "principled conservative" and supporter of the Tea Party movement,[2] saying he was "a Christian, a conservative, and a Republican, in that order."
+ </p>
+<div class="slidecontainer">
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    <p>Drag the slider to set the percentage of text to keep in the summary</p>
+    <p>Value: <span id="demo"></span></p>
+	<p>Sentiment Value:0.24 <span id="demo"></span></p>
+</div> 
+ <h3 class="w3-center">summarised text</h3>
+  <p class="w3-large w3-center w3-padding-16">Michael Richard Pence (born June 7, 1959) is an American politician, broadcaster, and lawyer who served as the 48th vice president of the United States from 2017 to 2021 under President Donald Trump. A member of the Republican Party, he previously served as the 50th governor of Indiana from 2013 to 2017. Pence was also a member of the U.S. House of Representatives from 2001 to 2013.
+
+Pence was born and raised in Columbus, Indiana, and is the younger brother of U.S. Representative Greg Pence. He graduated from Hanover College and earned a law degree from the Indiana University Robert H. He was elected to the U.S. House of Representatives in 2000 and represented the 2nd district of Indiana from 2001 to 2003 and the 6th district of Indiana from 2003 to 2013. He chaired the Republican Study Committee from 2005 to 2007 and served as the chairman of the House Republican Conference from 2009 to 2011, the third-highest position in the House Republican leadership.[1] Pence described himself as a "principled conservative" and supporter of the Tea Party movement,[2] saying he was "a Christian, a conservative, and a Republican, in that order."</p>
+
+
+
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+</body>
+</html>

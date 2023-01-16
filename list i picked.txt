@@ -1,0 +1,10 @@
+CH4 irish plays visulaisation graphs
+MM04 Discrete Simulation of irish elections
+CR4 Music generation based on music
+
+
+lower option 
+MB3 predict house priceing building dataset model
+MN1 Augmented web browsing
+D01 ONLINE timetables
+
